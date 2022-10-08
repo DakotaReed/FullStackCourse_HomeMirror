@@ -43,8 +43,7 @@ public class Locators__Basic_01 {
         for (int i = 0; i < allLinks.size(); i++) {
             WebElement link = allLinks.get(i);
             try {
-                boolean strLink = link.getAttribute("href").contains(word);
-                if (strLink)
+                if (link.getAttribute("href").contains(word))
                     allSeleniumLinks.add("+");
 //                System.out.println(link.getAttribute("href"));
             }
