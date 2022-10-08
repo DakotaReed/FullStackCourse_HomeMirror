@@ -28,8 +28,8 @@ public class Locators__Basic_02 {
 
     @Test
     public void Test01__IdentificationOfElements() {
-        logoPicture = driver.findElement(By.tagName("img"));
-        System.out.println(logoPicture.getAttribute("src"));
+        logoPicture = driver.findElement(By.className("central-featured-logo"));
+//        System.out.println(logoPicture.getAttribute("src"));
         fullRowOfInput = driver.findElement(By.tagName("fieldset"));
         searchLanguage = driver.findElement(By.id("searchLanguage"));
         pleaseDonate = driver.findElement(By.className("footer-sidebar-content"));
