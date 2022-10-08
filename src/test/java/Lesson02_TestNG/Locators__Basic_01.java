@@ -36,24 +36,25 @@ public class Locators__Basic_01 {
         System.out.println("Links Available on the Page:  " + allLinks.size());
         System.out.println();
 
-        String word = "kiwiirc";
+        String something = "kiwiirc";
         for (int i = 0; i < allLinks.size(); i++) {
             WebElement link = allLinks.get(i);
             try {
-                if (link.getAttribute("href").contains(word))
+                if (link.getAttribute("href").contains(something))
                     allSeleniumLinks.add("+");
 //                System.out.println(link.getAttribute("href"));
             }
             catch (Exception e) {
                 System.out.println("We had Exception in our Loop. Exception is:  "+e);
+                System.out.println("Index of array with Exception is:  "+i);
                 System.out.println();       }
 
         }
         if (allSeleniumLinks.size()>0) {
             if (allSeleniumLinks.size()==1)
-                System.out.println("One Link with word '"+word+"' Available on the Page.");
+                System.out.println("One Link with '"+something+"' Available on the Page.");
             else
-                System.out.println("Links with word '"+word+"' Available on the Page:  "+allSeleniumLinks.size()+".");
+                System.out.println("Links with '"+something+"' Available on the Page:  "+allSeleniumLinks.size()+".");
         }
     }
 
