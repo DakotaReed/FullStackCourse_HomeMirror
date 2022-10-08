@@ -31,9 +31,6 @@ public class Locators__Basic_01 {
     }
     @Test
     public void Test02__HowManyLinks() {
-//        String pageSource = driver.getPageSource();
-//        String[] arrayPageSource = pageSource.split("href");
-//        System.out.println("There are "+(arrayPageSource.length-1)+" links on the page.");
         List<WebElement> allLinks = driver.findElements(By.tagName("a"));
         List<String> allSeleniumLinks = new ArrayList<>();
         System.out.println("Links Available on the Page:  " + allLinks.size());
