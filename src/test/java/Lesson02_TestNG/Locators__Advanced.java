@@ -45,5 +45,4 @@ public class Locators__Advanced {
         System.out.println(driver.findElement(By.xpath("//*[@id=\"contact_info_left\"]/input")).getAttribute("value"));
         System.out.println(driver.findElement(By.cssSelector("button[class='btn btn-2']")).getText());
     }
-
 }
