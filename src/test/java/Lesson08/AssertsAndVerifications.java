@@ -9,6 +9,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertFalse;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
+
 public class AssertsAndVerifications {
 
     WebDriver driver;
@@ -66,5 +70,10 @@ public class AssertsAndVerifications {
         if (driver.findElement(By.id("new_input")).isDisplayed()) {
             System.out.println();
             System.out.println("Fill the fields");      }
+
+        assertTrue(driver.findElement(By.id("calculate_data")).isDisplayed());
+        assertEquals(driver.findElement(By.id("calculate_data")).getAttribute("value"),"Calculate BMI");
+        assertFalse(driver.findElement(By.id("new_input")).isDisplayed(),"Checking Element (new_input) is Displayed");
+
     }
 }
