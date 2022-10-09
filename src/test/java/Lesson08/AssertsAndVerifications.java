@@ -48,8 +48,14 @@ public class AssertsAndVerifications {
     public void Test02() {
         WebElement calculateButton = driver.findElement(By.id("calculate_data"));
 
+//        System.out.println(calculateButton.getSize().getWidth());
+//        System.out.println(calculateButton.getSize().getHeight());
         System.out.println(calculateButton.getSize());
+        System.out.println();
+//        System.out.println(calculateButton.getLocation().getX());
+//        System.out.println(calculateButton.getLocation().getY());
         System.out.println(calculateButton.getLocation());
+        System.out.println();
 
         System.out.println();
         if (calculateButton.isEnabled() && calculateButton.isDisplayed())
