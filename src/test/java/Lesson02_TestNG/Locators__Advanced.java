@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Locators__Advanced {
-    WebDriver driver;
 
+    WebDriver driver;
     @BeforeClass
     public void enter() {
         WebDriverManager.chromedriver().setup();
