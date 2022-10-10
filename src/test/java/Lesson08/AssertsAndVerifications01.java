@@ -13,7 +13,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class AssertsAndVerifications {
+public class AssertsAndVerifications01 {
 
     WebDriver driver;
     @BeforeClass
