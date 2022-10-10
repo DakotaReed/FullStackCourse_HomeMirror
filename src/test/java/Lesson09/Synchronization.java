@@ -41,7 +41,7 @@ public class Synchronization {
         assertTrue(driver.findElement(By.id("loading1")).isEnabled());
     }
     @Test
-    public void Test03__Remove() throws InterruptedException {
+    public void Test03__Remove() {
         driver.findElement(By.id("checkbox")).findElement(By.tagName("input")).click();
         driver.findElement(By.id("btn")).click();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
