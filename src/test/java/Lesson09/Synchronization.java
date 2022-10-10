@@ -1,5 +1,6 @@
 package Lesson09;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +22,7 @@ public class Synchronization {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://atidcollege.co.il/Xamples/ex_synchronization.html");
-        wait = new WebDriverWait(driver, 2);        }
+        driver.get("https://atidcollege.co.il/Xamples/ex_synchronization.html");        }
     @AfterClass
     public void exit() throws InterruptedException {
         Thread.sleep(2000);
@@ -31,12 +31,14 @@ public class Synchronization {
     @Test
     public void Test01__Rendered() {
         driver.findElement(By.id("rendered")).click();
+        wait = new WebDriverWait(driver, 2);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("finish2")));
         assertTrue(driver.findElement(By.id("finish2")).isEnabled());
     }
     @Test
     public void Test02__Hidden() throws InterruptedException {
         driver.findElement(By.id("hidden")).click();
+//        Uninterruptibles.sleepUninterruptibly(5, TimeUnit.SECONDS);
         Thread.sleep(2000);
         assertTrue(driver.findElement(By.id("loading1")).isEnabled());
     }
