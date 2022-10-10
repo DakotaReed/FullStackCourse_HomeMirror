@@ -29,9 +29,11 @@ public class SwitchAndNavigation {
         driver.get("https://atidcollege.co.il/Xamples/ex_switch_navigation.html");
 
 //        wait = new WebDriverWait(driver, 2); //--------In BeforeClass
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(""))); //-------------In Test' ID of Element
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(""))); //-------------In Test.. ID of Element
 //        wait.until(ExpectedConditions.textToBe(By.id(""), "")); //-------------In Test' ID of Element, Text of Element
 //        wait.until(ExpectedConditions.titleIs("")); //----------Title of new page
+
+//        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 //        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         }
     @AfterClass
