@@ -38,7 +38,7 @@ public class ExternalFiles02 {
 
         for (int j=0; j<3; j++) {
             String firstNumber = Integer.toString(j+1);
-            for (int i = 0; i < 3; i++) {
+            for (int i=0; i<3; i++) {
                 driver.findElement(By.xpath("/html/body/div/div/form/input[1]")).sendKeys(firstNumber);
                 String secondNumber = Integer.toString(i + 1);
                 driver.findElement(By.xpath("/html/body/div/div/form/input[2]")).sendKeys(secondNumber);
@@ -52,7 +52,6 @@ public class ExternalFiles02 {
         List<WebElement> listRows = driver.findElement(By.tagName("tbody")).findElements(By.className("ng-scope"));
         for (WebElement row : listRows) {
             List<WebElement> listResults = row.findElements(By.cssSelector("td[class='ng-binding']"));
-            System.out.println(listResults.get(1).getText());
-        }
+            System.out.println(listResults.get(1).getText());        }
     }
 }
