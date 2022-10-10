@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ExternalFiles02__Random {
+public class ExternalFiles03__Random {
 
     WebDriver driver;
     String randomNumber;
