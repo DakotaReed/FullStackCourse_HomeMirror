@@ -6,9 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import java.util.concurrent.TimeUnit;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -16,12 +20,20 @@ import static org.testng.AssertJUnit.assertTrue;
 public class SwitchAndNavigation {
 
     WebDriver driver;
+    WebDriverWait wait;
     @BeforeClass
     public void enter() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://atidcollege.co.il/Xamples/ex_switch_navigation.html");       }
+        driver.get("https://atidcollege.co.il/Xamples/ex_switch_navigation.html");
+
+//        wait = new WebDriverWait(driver, 2); //--------In BeforeClass
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.id(""))); //-------------In Test' ID of Element
+//        wait.until(ExpectedConditions.textToBe(By.id(""), "")); //-------------In Test' ID of Element, Text of Element
+//        wait.until(ExpectedConditions.titleIs("")); //----------Title of new page
+//        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        }
     @AfterClass
     public void exit() throws InterruptedException {
         Thread.sleep(2000);
@@ -96,7 +108,7 @@ public class SwitchAndNavigation {
     @Test
     public void Test06__Window() throws InterruptedException {
         driver.findElement(By.linkText("Open New Window")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         String winHandleFirst = driver.getWindowHandle();
         for (String winHandle : driver.getWindowHandles())
             driver.switchTo().window(winHandle);
