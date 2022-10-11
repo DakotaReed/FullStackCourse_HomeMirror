@@ -7,30 +7,30 @@ import org.testng.annotations.Listeners;
 
 public class Pattern__AutomationListeners implements ITestListener {
     public void onStart(ITestContext execution){
-        // TODO Auto-generated method stub
+        System.out.println("------------------Starting Execution------------------");
     }
 
     public void onFinish(ITestContext execution){
-        // TODO Auto-generated method stub
+        System.out.println("------------------Execution Ended------------------");
     }
 
     public void onTestStart(ITestResult test){
-        // TODO Auto-generated method stub
+        System.out.println("------------------Starting Test: "+test.getName()+"------------------");
     }
 
     public void onTestSuccess(ITestResult test){
-        // TODO Auto-generated method stub
+        System.out.println("------------------Test: "+test.getName()+" Passed------------------");
     }
 
     public void onTestFailure(ITestResult test){
-        // TODO Auto-generated method stub
+        System.out.println("------------------Test: "+test.getName()+" Failed------------------");
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult test) {
-        // TODO Auto-generated method stub
+        System.out.println("???");
     }
 
     public void onTestSkipped(ITestResult test){
-        // TODO Auto-generated method stub
+        System.out.println("------------------Skipping Test: "+test.getName()+"------------------");
     }
 }
