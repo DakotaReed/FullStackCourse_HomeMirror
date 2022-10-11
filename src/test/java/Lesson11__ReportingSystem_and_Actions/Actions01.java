@@ -32,6 +32,7 @@ public class Actions01 {
     String nameOfElement01;
     String nameOfElement02;
     String textDemo;
+    WebElement element;
     String backgroundColor;
 
     @BeforeClass
@@ -80,10 +81,11 @@ public class Actions01 {
     }
     @Test (description = "Mouse Move")
     @Description
-    public void Test04() {
+    public void Test04() throws InterruptedException {
         actionsDrag.moveToElement(driver.findElement(By.id("mouse_hover"))).build().perform();
-        backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
-        painted(backgroundColor);
+//        actionsDrag.moveToElement(driver.findElement(By.id("dbl_click"))).click().build().perform();
+        Thread.sleep(2000);
+        painted();
     }
     @Test (description = "Scrolling")
     @Description
@@ -117,15 +119,19 @@ public class Actions01 {
         System.out.println(hiddenText+"  <----is hidden text.");
         System.out.println();
     }
-    @Step("Painted")
-    public void painted(String backgroundColor) {
+    @Step("Painted and Mouse on")
+    public void painted() {
         try {
-            assertFalse(backgroundColor.equals(getData("StartColour")));
-        System.out.println("The Color is not Grey. The Color is: "+backgroundColor);
-            System.out.println();       }
+            backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
+            assertFalse(backgroundColor.equals(getData("MouseOffColour")));
+            System.out.println("The Color is: "+backgroundColor);       }
         catch (AssertionError e) {
             saveScreenshot();
-            System.out.println(e);        }
+            System.out.println(e+"     Mouse out of Element");        }
+        finally {
+            System.out.println();
+            System.out.println("Mouse off Colour is: "+getData("MouseOffColour"));
+        }
     }
     @Step("Scrolled")
     public void scrolled() {
