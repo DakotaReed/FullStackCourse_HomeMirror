@@ -5,4 +5,9 @@
     <Height>164</Height>
     <ExpectedResultBMI>17</ExpectedResultBMI>
     <ExpectedMeansResult>That you are too thin.</ExpectedMeansResult>
+
+<!--    Actions:-->
+    <UrlActions>https://atidcollege.co.il/Xamples/ex_actions.html</UrlActions>
+    <ExpectedText>Dropped!</ExpectedText>
+    <StartColour>lightgray</StartColour>
 </Environment>
