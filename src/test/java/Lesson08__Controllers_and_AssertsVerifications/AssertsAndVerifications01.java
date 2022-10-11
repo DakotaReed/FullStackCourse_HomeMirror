@@ -1,4 +1,4 @@
-package Lesson08;
+package Lesson08__Controllers_and_AssertsVerifications;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

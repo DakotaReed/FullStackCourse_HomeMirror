@@ -1,6 +1,5 @@
-package Lesson09;
+package Lesson09__SwitchNavigation_and_Synchronization;
 
-import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

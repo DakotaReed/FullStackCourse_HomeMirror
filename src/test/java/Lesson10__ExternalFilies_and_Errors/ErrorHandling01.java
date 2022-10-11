@@ -1,4 +1,4 @@
-package Lesson10;
+package Lesson10__ExternalFilies_and_Errors;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

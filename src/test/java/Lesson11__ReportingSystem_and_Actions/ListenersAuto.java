@@ -1,4 +1,4 @@
-package Lesson10;
+package Lesson11__ReportingSystem_and_Actions;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

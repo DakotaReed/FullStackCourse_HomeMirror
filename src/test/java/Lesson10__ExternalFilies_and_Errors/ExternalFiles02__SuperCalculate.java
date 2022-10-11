@@ -1,4 +1,4 @@
-package Lesson10;
+package Lesson10__ExternalFilies_and_Errors;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;

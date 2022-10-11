@@ -1,4 +1,4 @@
-package Lesson11;
+package Lesson10__ExternalFilies_and_Errors;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

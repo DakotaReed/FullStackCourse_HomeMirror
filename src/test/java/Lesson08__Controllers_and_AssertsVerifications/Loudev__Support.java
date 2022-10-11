@@ -1,4 +1,4 @@
-package Lesson08;
+package Lesson08__Controllers_and_AssertsVerifications;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

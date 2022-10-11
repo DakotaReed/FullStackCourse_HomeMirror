@@ -1,4 +1,4 @@
-package Lesson08;
+package Lesson08__Controllers_and_AssertsVerifications;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -8,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static Lesson08.Loudev__Support.numberOfElem;
+import static Lesson08__Controllers_and_AssertsVerifications.Loudev__Support.numberOfElem;
 
 public class AssertsAndVerifications02__Loudev {
 
