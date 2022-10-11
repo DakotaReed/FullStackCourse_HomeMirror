@@ -112,9 +112,9 @@ public class Actions01 {
             System.out.println(value+"  <----is selected element.");
     }
     @Step("Displayed")
-    public void displayed(String text) {
+    public void displayed(String hiddenText) {
         assertTrue(driver.findElement(By.id("dbl_click")).isDisplayed());
-        System.out.println(text+"  <----is hidden text.");
+        System.out.println(hiddenText+"  <----is hidden text.");
         System.out.println();
     }
     @Step("Painted")
