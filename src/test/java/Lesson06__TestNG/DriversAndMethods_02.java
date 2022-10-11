@@ -1,4 +1,4 @@
-package Lesson06_TestNG;
+package Lesson06__TestNG;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
