@@ -1,11 +1,10 @@
+package Lesson10;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.Listeners;
 
-//@Listeners(Pattern__AutomationListeners.class)
-
-public  class Pattern__AutomationListeners implements ITestListener {
+public  class ListenersAuto implements ITestListener {
     public void onStart(ITestContext execution){
         System.out.println("------------------Starting Execution------------------");
     }
