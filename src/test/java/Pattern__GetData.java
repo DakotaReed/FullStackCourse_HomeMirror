@@ -1,4 +1,9 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -25,9 +30,19 @@ public class Pattern__GetData {
         Thread.sleep(3000);
         driver.quit();
     }
+    @Attachment(value = "Page Screen-Shot", type = "image/png")
+    public byte[] saveScreenshot() {
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+    }
 
-    @Test
+    @Test (description = "")
+    @Description ("")
     public void Test01() {
+
+    }
+
+    @Step("...")
+    public void step() {
 
     }
 
