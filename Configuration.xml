@@ -10,4 +10,9 @@
     <UrlActions>https://atidcollege.co.il/Xamples/ex_actions.html</UrlActions>
     <ExpectedText>Dropped!</ExpectedText>
     <MouseOffColour>rgba(211, 211, 211, 1)</MouseOffColour>
+
+<!--    ToDoTrgil-->
+    <FirstTask>first task is input 1</FirstTask>
+    <SecondTask>second task is input 2</SecondTask>
+
 </Environment>
