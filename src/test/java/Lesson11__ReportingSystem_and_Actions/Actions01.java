@@ -1,7 +1,6 @@
 package Lesson11__ReportingSystem_and_Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
@@ -23,9 +22,8 @@ import static org.testng.AssertJUnit.*;
 
 @Listeners(ListenersAuto.class)
 
-public class Actions01 {
+public class Actions01 extends Base {
 
-    WebDriver driver;
     Actions actionsDrag;
     String actualText;
     String expectedText;
@@ -47,10 +45,6 @@ public class Actions01 {
     public void closeSession() throws InterruptedException {
         Thread.sleep(2000);
         driver.quit();
-    }
-    @Attachment(value = "Page Screen-Shot", type = "image/png")
-    public byte[] saveScreenshot() {
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @Test (description = "Drag&Drop")
@@ -97,11 +91,7 @@ public class Actions01 {
 
     @Step("Dropped")
     public void dropped(String actualText, String expectedText) {
-        try {
-            assertTrue(actualText.equals(expectedText));        }
-        catch (AssertionError e) {
-            System.out.println(e);
-            saveScreenshot();        }
+        assertTrue(actualText.equals(expectedText));
         System.out.println(actualText+"  <----is actual text.");
         System.out.println();
     }
@@ -121,17 +111,18 @@ public class Actions01 {
     }
     @Step("Painted and Mouse on")
     public void painted() {
-        try {
-            backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
+//        try {
+            backgroundColor = driver.findElement(By.id("xxx")).getCssValue("background-color");
             assertFalse(backgroundColor.equals(getData("MouseOffColour")));
-            System.out.println("The Color is: "+backgroundColor);       }
-        catch (AssertionError e) {
-            saveScreenshot();
-            System.out.println(e+"     Mouse out of Element");        }
-        finally {
+            System.out.println("The Color is: "+backgroundColor);
+//        }
+//        catch (AssertionError e) {
+//            System.out.println(e+"     Mouse out of Element");
+//            fail();     }
+//        finally {
             System.out.println();
             System.out.println("Mouse off Colour is: "+getData("MouseOffColour"));
-        }
+//        }
     }
     @Step("Scrolled")
     public void scrolled() {
