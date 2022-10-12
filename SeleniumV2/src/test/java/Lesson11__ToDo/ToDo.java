@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -20,6 +21,8 @@ import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+
+import static org.aspectj.bridge.MessageUtil.fail;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -102,6 +105,7 @@ public class ToDo {
         try {
             driver.findElement(By.xpath("/html/body/section/div")).findElement(By.tagName("section"));
             System.out.println("Task don't deleted !");
+            fail("Task don't deleted !");
         }
         catch (Exception e) {        }
     }
