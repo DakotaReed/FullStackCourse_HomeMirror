@@ -37,7 +37,7 @@ public class ToDo {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://todomvc.com/examples/react");
+        driver.get(getData("UrlToDo"));
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         actionsToDo = new Actions(driver);
     }
