@@ -96,7 +96,7 @@ public class Actions01 extends Base {
     }
     @Step("Painted and Mouse on")
     public void painted() {
-            backgroundColor = driver.findElement(By.id("xxx")).getCssValue("background-color");
+            backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
             assertFalse(backgroundColor.equals(getData("MouseOffColour")));
             System.out.println("The Color is: "+backgroundColor);
             System.out.println();
