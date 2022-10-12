@@ -11,7 +11,7 @@
     <ExpectedText>Dropped!</ExpectedText>
     <MouseOffColour>rgba(211, 211, 211, 1)</MouseOffColour>
 
-<!--    ToDoTrgil-->
+<!--    ToDoData-->
     <UrlToDo>https://todomvc.com/examples/react</UrlToDo>
     <FirstTask>first task is input 1</FirstTask>
     <SecondTask>second task is input 2</SecondTask>
