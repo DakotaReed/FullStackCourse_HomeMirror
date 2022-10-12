@@ -1,5 +1,6 @@
 package Lesson11__ReportingSystem_and_Actions;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -47,7 +48,14 @@ public  class ListenersAuto extends Base implements ITestListener {
     }
 
     @Attachment(value = "Page Screen-Shot", type = "image/png")
-    public byte[] saveScreenshot() {
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+//    public byte[] saveScreenshot() {
+//        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+//    }
+    public void saveScreenshot() {
+        Allure.getLifecycle().addAttachment(
+                "screenshot",
+                "image/png",
+                "png", ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES)
+        );
     }
 }

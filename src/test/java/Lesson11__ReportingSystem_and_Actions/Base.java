@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeClass;
 
 public class Base {
 
-    static WebDriver driver;
-    Actions actionsDrag;
+    public static WebDriver driver;
+    public static Actions actionsDrag;
     @BeforeClass
     public void startSession() {
         WebDriverManager.chromedriver().setup();

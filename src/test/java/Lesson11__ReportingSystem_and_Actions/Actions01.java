@@ -1,13 +1,8 @@
 package Lesson11__ReportingSystem_and_Actions;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.w3c.dom.Document;
@@ -29,7 +24,6 @@ public class Actions01 extends Base {
     String nameOfElement01;
     String nameOfElement02;
     String textDemo;
-    WebElement element;
     String backgroundColor;
 
     @Test (description = "Drag&Drop")
@@ -97,7 +91,8 @@ public class Actions01 extends Base {
     @Step("Painted and Mouse on")
     public void painted() {
             backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
-            assertFalse(backgroundColor.equals(getData("MouseOffColour")));
+        assertEquals(backgroundColor, getData("MouseOffColour"));
+//            assertFalse(backgroundColor.equals(getData("MouseOffColour")));
             System.out.println("The Color is: "+backgroundColor);
             System.out.println();
             System.out.println("Mouse off Colour is: "+getData("MouseOffColour"));
