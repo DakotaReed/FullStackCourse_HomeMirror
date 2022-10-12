@@ -1,3 +1,5 @@
+package Lesson06__TestNG;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;

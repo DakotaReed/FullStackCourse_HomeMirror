@@ -1,4 +1,4 @@
-//
+package Lesson06__TestNG;//
 //
 //<dependencies>
 //<dependency>
