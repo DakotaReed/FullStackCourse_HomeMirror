@@ -24,7 +24,6 @@ import static org.testng.AssertJUnit.*;
 
 public class Actions01 extends Base {
 
-    Actions actionsDrag;
     String actualText;
     String expectedText;
     String nameOfElement01;
@@ -32,20 +31,6 @@ public class Actions01 extends Base {
     String textDemo;
     WebElement element;
     String backgroundColor;
-
-    @BeforeClass
-    public void startSession() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(getData("UrlActions"));
-        actionsDrag = new Actions(driver);
-    }
-    @AfterClass
-    public void closeSession() throws InterruptedException {
-        Thread.sleep(2000);
-        driver.quit();
-    }
 
     @Test (description = "Drag&Drop")
     @Description
@@ -111,7 +96,7 @@ public class Actions01 extends Base {
     }
     @Step("Painted and Mouse on")
     public void painted() {
-            backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
+            backgroundColor = driver.findElement(By.id("xxx")).getCssValue("background-color");
             assertFalse(backgroundColor.equals(getData("MouseOffColour")));
             System.out.println("The Color is: "+backgroundColor);
             System.out.println();
