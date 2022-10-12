@@ -146,7 +146,7 @@ public class ToDo {
     public String getData (String nodeName) {
         DocumentBuilder dBuilder;
         Document doc = null;
-        File fXmlFile = new File("./Configuration.xml");
+        File fXmlFile = new File("Configuration.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
             dBuilder = dbFactory.newDocumentBuilder();

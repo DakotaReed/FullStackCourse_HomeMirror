@@ -91,7 +91,7 @@ public class Actions01 extends Base {
     @Step("Painted and Mouse on")
     public void painted() {
             backgroundColor = driver.findElement(By.id("mouse_hover")).getCssValue("background-color");
-        assertEquals(backgroundColor, getData("MouseOffColour"));
+        assertFalse(backgroundColor.equals(getData("MouseOffColour")));
 //            assertFalse(backgroundColor.equals(getData("MouseOffColour")));
             System.out.println("The Color is: "+backgroundColor);
             System.out.println();
@@ -106,7 +106,7 @@ public class Actions01 extends Base {
     public String getData (String nodeName) {
         DocumentBuilder dBuilder;
         Document doc = null;
-        File fXmlFile = new File("./Configuration.xml");
+        File fXmlFile = new File("Configuration.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
             dBuilder = dbFactory.newDocumentBuilder();
