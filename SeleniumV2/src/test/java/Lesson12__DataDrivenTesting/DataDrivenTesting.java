@@ -35,7 +35,7 @@ public class DataDrivenTesting {
 
     @Test(description = "Checking Title of the search result Page")
     public void checkingTitleWiki() throws InterruptedException {
-        textForSearching = "Import";
+        textForSearching = "BlahBlah";
         inputText(textForSearching);
         click();
         gettingTitle();
@@ -55,11 +55,12 @@ public class DataDrivenTesting {
     }
     @Step("Getting Title of Search Results")
     public void gettingTitle() {
-        actualTitle = driver.findElement(By.className("mw-page-title-main")).getText();
+        actualTitle = driver.findElement(By.id("firstHeading")).getText();
     }
     @Step("Checking Titles")
     public void checkingTitles(String actualTitle, String inputtedText) {
-        assertEquals(actualTitle, inputtedText);
+        if (!actualTitle.equals("Search results"))
+            assertEquals(actualTitle, inputtedText);
     }
     @Step("Going Page Back")
     public void goingBack() {
