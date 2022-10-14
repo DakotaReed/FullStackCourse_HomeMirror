@@ -32,14 +32,23 @@ public class DataDrivenTesting {
         Thread.sleep(1000);
         driver.quit();
     }
+    @DataProvider(name = "dataProvider__Wiki")
+    public Object[][] getDataObject() {
+        return new Object[][] {
+                {"Import", "Import"},
+                {"Israel", "Israel"},
+                {"Automation", "Automation"},
+                {"BlahBlah", "Search results"}
+        };
+    }
 
-    @Test(description = "Checking Title of the search result Page")
-    public void checkingTitleWiki() throws InterruptedException {
-        textForSearching = "BlahBlah";
+    @Test(description = "Checking Title of the search result Page", dataProvider = "dataProvider__Wiki")
+    public void checkingTitleWiki(String textForSearching, String expectedTitle) throws InterruptedException {
+//        textForSearching = "BlahBlah";
         inputText(textForSearching);
         click();
         gettingTitle();
-        checkingTitles(actualTitle, textForSearching);
+        checkingTitles(actualTitle, expectedTitle);
         Thread.sleep(1000);
         goingBack();
         clearingSearchRow();
@@ -58,9 +67,9 @@ public class DataDrivenTesting {
         actualTitle = driver.findElement(By.id("firstHeading")).getText();
     }
     @Step("Checking Titles")
-    public void checkingTitles(String actualTitle, String inputtedText) {
-        if (!actualTitle.equals("Search results"))
-            assertEquals(actualTitle, inputtedText);
+    public void checkingTitles(String actualTitle, String expectedTitle) {
+//        if (!actualTitle.equals("Search results"))
+            assertEquals(actualTitle, expectedTitle);
     }
     @Step("Going Page Back")
     public void goingBack() {
