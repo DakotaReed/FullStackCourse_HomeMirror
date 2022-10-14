@@ -16,7 +16,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class DataDrivenTesting {
     static WebDriver driver;
-    Actions actionsDataDriven;
     String textForSearching;
     String actualTitle;
 
@@ -27,7 +26,6 @@ public class DataDrivenTesting {
         driver.manage().window().maximize();
         driver.get("https://www.wikipedia.org/");
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        actionsDataDriven = new Actions(driver);
     }
     @AfterClass
     public void closeSession() throws InterruptedException {
