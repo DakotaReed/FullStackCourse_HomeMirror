@@ -34,17 +34,17 @@ public class DataDrivenTesting {
         Thread.sleep(1000);
         driver.quit();
     }
-    @DataProvider(name = "dataProvider__Wiki")
-    public Object[][] getDataObject() {
-        return new Object[][] {
-                {"Import", "Import"},
-                {"Israel", "Israel"},
-                {"Automation", "Automation"},
-                {"BlahBlah", "Search results"}
-        };
-    }
+//    @DataProvider(name = "dataProvider__Wiki")
+//    public Object[][] getDataObject() {
+//        return new Object[][] {
+//                {"Import", "Import"},
+//                {"Israel", "Israel"},
+//                {"Automation", "Automation"},
+//                {"BlahBlah", "Search results"}
+//        };
+//    }
 
-    @Test(description = "Checking Title of the search result Page", dataProvider = "dataProvider__Wiki")
+    @Test(description = "Checking Title of the search result Page", dataProvider = "dataProvider Wiki CSV", dataProviderClass = Utils.class)
     public void checkingTitleWiki(String textForSearching, String expectedTitle) throws InterruptedException {
 //        textForSearching = "BlahBlah";
         inputText(textForSearching);
