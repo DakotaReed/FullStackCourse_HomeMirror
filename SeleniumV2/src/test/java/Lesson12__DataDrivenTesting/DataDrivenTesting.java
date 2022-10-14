@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+@Listeners(ListenersAuto.class)
+
 public class DataDrivenTesting {
     static WebDriver driver;
     Actions actionsDataDriven;
