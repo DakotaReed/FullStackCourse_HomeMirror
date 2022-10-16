@@ -201,5 +201,4 @@ public class Woolovers {
     public void nextPage() {
             driver.findElement(By.linkText("Next")).click();
     }
-
 }
