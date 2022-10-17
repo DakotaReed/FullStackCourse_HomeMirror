@@ -108,7 +108,7 @@ public class Woolovers {
     public void choosingSection(String section) {
         driver.findElement(By.className("font-weight-bold")).click();
     }
-    @Step("clicking Country Row")
+    @Step("Clicking Country Row")
     public void clickingCountryRow() {
         driver.findElement(By.className("country-selection--rest-of-world")).click();
     }
