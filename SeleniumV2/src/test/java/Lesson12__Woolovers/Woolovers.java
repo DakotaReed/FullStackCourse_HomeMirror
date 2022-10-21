@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -45,6 +46,16 @@ public class Woolovers {
     public void closeSession() throws InterruptedException {
         Thread.sleep(2000);
         driver.quit();
+    }
+
+    @BeforeMethod
+    public void beforeMethod(Method method) {
+        try {
+            MonteScreenRecorder.startRecord(method.getName());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test(description = "Close Pop Ups")
@@ -88,15 +99,17 @@ public class Woolovers {
         clickingDone();
         Thread.sleep(1000);
     }
-    @Test(description = "Checking that Price is NOT high than 206$")
-    public void Test06__checkingPrice() {
+    @Test(description = "Checking that Price is NOT higher than 206$")
+    public void Test06__checkingPrice() throws InterruptedException {
+//        clickingViewAll();
         checkingPriceOnOnePage();
-        pagesCount();
-        printAllPages(lastPageNumber);
-        for (int i=0; i<lastPageNumber-1; i++) {
-            nextPage();
-            checkingPriceOnOnePage();
-        }
+        checkingAllOtherPrices();
+//        pagesCount();
+//        printAllPages(lastPageNumber);
+//        for (int i=0; i<lastPageNumber-1; i++) {
+//            nextPage();
+//            checkingPriceOnOnePage();
+//        }
     }
 
     @Step("Closing Pop Up Messages")
@@ -154,8 +167,42 @@ public class Woolovers {
     public void clickingDone() {
         driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/div/div[3]/div[2]/div[10]/div/div/div[3]/div")).click();
     }
-    @Step("Checking Price on one Page")
-    public void checkingPriceOnOnePage() {
+    @Step("checkingPriceOnOtherPages")
+    public void checkingAllOtherPrices() throws InterruptedException {
+        boolean nextPageExist;
+        try {
+            driver.findElement(By.linkText("Next"));
+            nextPageExist = true;
+            while (nextPageExist) {
+                driver.findElement(By.linkText("Next")).click();
+                checkingPriceOnOnePage();
+            }
+        }
+        catch (Exception e) {}
+        catch (AssertionError s) {
+//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.cssSelector("a[class='paging']")));
+//            ((JavascriptExecutor) driver).executeScript("scroll(0, 250);");
+//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.cssSelector("div[class='col-xs-12 listing-page__bottom-nav text-right']")));
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,2000);");
+            Thread.sleep(2000);
+            fail();
+        }
+    }
+//    @Step("All Pages Count")
+//    public void pagesCount() {
+//        List<WebElement> listPages = driver.findElements(By.xpath("//ul[@class='listing-navigation__view']/li"));
+//        lastPageNumber = Integer.parseInt(listPages.get(listPages.size()-2).getText());
+//
+//    }
+//    @Step("All Pages that We Have")
+//    public void printAllPages(int allPages) {
+//        System.out.println(allPages);
+//    }
+//    @Step("Next Page")
+//    public void nextPage() {
+//        driver.findElement(By.linkText("Next")).click();
+//    }
+    public void checkingPriceOnOnePage() throws InterruptedException {
         char[] noHundreds = {'9','8','7','6','5','4','3'};
         char ourMaxHundred = '2';
         char[] noTens = {'9','8','7','6','5','4','3','2','1'};
@@ -186,19 +233,6 @@ public class Woolovers {
                 }
             }
         }
+    }
 
-    }
-    @Step("All Pages Count")
-    public void pagesCount() {
-        List<WebElement> listPages = driver.findElements(By.xpath("//ul[@class='listing-navigation__view']/li"));
-        lastPageNumber = Integer.parseInt(listPages.get(listPages.size()-2).getText());
-    }
-    @Step("All Pages that We Have")
-    public void printAllPages(int allPages) {
-        System.out.println(allPages);
-    }
-    @Step("Next Page")
-    public void nextPage() {
-            driver.findElement(By.linkText("Next")).click();
-    }
 }
