@@ -181,8 +181,6 @@ public class Woolovers {
         catch (Exception e) {}
         catch (AssertionError s) {
 //            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.cssSelector("a[class='paging']")));
-//            ((JavascriptExecutor) driver).executeScript("scroll(0, 250);");
-//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.cssSelector("div[class='col-xs-12 listing-page__bottom-nav text-right']")));
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,2000);");
             Thread.sleep(2000);
             fail();
