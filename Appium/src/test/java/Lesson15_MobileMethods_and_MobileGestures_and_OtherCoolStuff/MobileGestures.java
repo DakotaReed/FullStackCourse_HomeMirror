@@ -26,7 +26,7 @@ import static org.testng.Assert.*;
 
 public class MobileGestures {
 
-    private String reportDirectory = "C:\\Automation\\FullStackCourse_HomeMirror\\Appium\\AppiumStudioReports\\";
+    private String reportDirectory = "E:\\Automation\\FullStackCourse_HomeMirror\\Appium\\AppiumStudioReports\\";
     private String reportFormat = "xml";
     private String testName = "MobileGestures.html";
     protected AndroidDriver<AndroidElement> driver = null;

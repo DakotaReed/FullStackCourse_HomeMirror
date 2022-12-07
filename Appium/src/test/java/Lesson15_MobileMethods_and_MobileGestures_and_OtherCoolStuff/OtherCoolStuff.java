@@ -21,7 +21,7 @@ import static org.testng.Assert.*;
 
 public class OtherCoolStuff {
 
-    private String reportDirectory = "C:\\Automation\\FullStackCourse_HomeMirror\\Appium\\AppiumStudioReports\\";
+    private String reportDirectory = "E:\\Automation\\FullStackCourse_HomeMirror\\Appium\\AppiumStudioReports\\";
     private String reportFormat = "xml";
     private String testName = "OtherCoolStuff.html";
     protected AndroidDriver<AndroidElement> driver = null;

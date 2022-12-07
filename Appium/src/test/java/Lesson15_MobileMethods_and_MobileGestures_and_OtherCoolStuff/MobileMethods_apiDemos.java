@@ -104,11 +104,11 @@ public class MobileMethods_apiDemos {
     public void test04_verifyDeviceNotLocked() throws IOException  {
         driver.openNotifications();
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("C:\\Automation\\Files\\Images\\Appium\\Screenshots\\test04__VerifyScreenOrientation_img01.png"));
+        FileUtils.copyFile(scrFile, new File("E:\\Automation\\Files\\Images\\Appium\\Screenshots\\test04__VerifyScreenOrientation_img01.png"));
         driver.pressKey(new KeyEvent().withKey(AndroidKey.HOME));
         Uninterruptibles.sleepUninterruptibly(500, TimeUnit.MILLISECONDS);
         File scrFile01 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile01, new File("C:\\Automation\\Files\\Images\\Appium\\Screenshots\\test04__VerifyScreenOrientation_img02.png"));
+        FileUtils.copyFile(scrFile01, new File("E:\\Automation\\Files\\Images\\Appium\\Screenshots\\test04__VerifyScreenOrientation_img02.png"));
 
         if (driver.isDeviceLocked())
         {}
