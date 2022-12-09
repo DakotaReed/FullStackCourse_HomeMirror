@@ -11,6 +11,7 @@
     <modules>
         <module>SeleniumV2</module>
         <module>Appium</module>
+        <module>RestAPI</module>
     </modules>
 
     <properties>
@@ -25,7 +26,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.5</version>
+            <version>7.4.0</version>
         </dependency>
 
     </dependencies>
