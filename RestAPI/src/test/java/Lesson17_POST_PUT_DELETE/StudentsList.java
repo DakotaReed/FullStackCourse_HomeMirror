@@ -1,7 +1,5 @@
 package Lesson17_POST_PUT_DELETE;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -9,8 +7,6 @@ import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
