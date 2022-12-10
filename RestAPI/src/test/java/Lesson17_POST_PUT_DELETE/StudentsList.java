@@ -1,5 +1,7 @@
 package Lesson17_POST_PUT_DELETE;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -7,6 +9,8 @@ import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
@@ -150,6 +154,28 @@ public class StudentsList {
 //        response = httpRequest.delete("/student/102");
 
         assertEquals(response.getStatusCode(), 204);
+
+//        try
+//        {
+//            JsonNode jsonTree = new ObjectMapper().readTree(response.getBody().asString()).get("url");
+//            CsvSchema.Builder csvSchemaBuilder = CsvSchema.builder();
+//            JsonNode firstObject = jsonTree.elements().next();
+//            firstObject.fieldNames().forEachRemaining(fieldName -> {csvSchemaBuilder.addColumn(fieldName);} );
+////                jsonTree.fieldNames().forEachRemaining(fieldName -> {csvSchemaBuilder.addColumn(fieldName);} );
+//            CsvSchema csvSchema = csvSchemaBuilder.build().withHeader();
+//            CsvMapper csvMapper = new CsvMapper();
+//            csvMapper.writerFor(JsonNode.class)
+//                    .with(csvSchema)
+//                    .writeValue(new File("E:\\Automation\\Project__RestAPI_ChuckNorris\\CSVFiles\\jokes.csv"), jsonTree);
+//
+//        }   catch(Exception ex)
+//        { throw ex; }
+//
+//        <dependency>
+//            <groupId>com.fasterxml.jackson.dataformat</groupId>
+//            <artifactId>jackson-dataformat-csv</artifactId>
+//            <version>2.13.3</version>
+//        </dependency>
     }
 
 }
