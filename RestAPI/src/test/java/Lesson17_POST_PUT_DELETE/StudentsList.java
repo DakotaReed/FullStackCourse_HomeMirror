@@ -155,6 +155,18 @@ public class StudentsList {
 
         assertEquals(response.getStatusCode(), 204);
 
+//        public void writeCSV(String url, String value) throws IOException {
+//            FileWriter pw = new FileWriter("./results.csv",true);
+//            StringBuilder sb = new StringBuilder();
+//            sb.append(url);
+//            sb.append(',');
+//            sb.append(value.replace(",", ""));
+//            sb.append('\n');
+//            pw.write(sb.toString());
+//            pw.close();
+//        }
+
+
 //        try
 //        {
 //            JsonNode jsonTree = new ObjectMapper().readTree(response.getBody().asString()).get("url");
