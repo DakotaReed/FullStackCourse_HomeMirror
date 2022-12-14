@@ -135,7 +135,7 @@ public class MobileMethods_apiDemos {
 
     @Test(description = "Test 05: Verify Amount of Word 'ListView' in Page Source")
     @Description("Verify Amount of Word 'ListView' in Page Source")
-    public void test03_verifyAmountListViewInPageSource() {
+    public void test05_verifyAmountListViewInPageSource() {
         String[] pageSource = driver.getPageSource().split(" ");
         String listSize;
         for (String word : pageSource) {
@@ -146,11 +146,13 @@ public class MobileMethods_apiDemos {
             listSize = Integer.toString(listForTestAmount.size());
         } catch (NullPointerException e) {
             listSize = "0";
+            System.out.println("ListSize is ZERO");
         }
         try {
             assertEquals(Integer.parseInt(listSize), 4);
         } catch (AssertionError e) {
             System.out.println("Word 'ListView' NOT equals in Page Source 4 times. Actual Amount is: "+listSize);
+            fail();
         }
     }
 
