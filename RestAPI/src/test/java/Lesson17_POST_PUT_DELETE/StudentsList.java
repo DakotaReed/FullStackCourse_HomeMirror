@@ -14,6 +14,7 @@ import static org.testng.Assert.assertEquals;
 public class StudentsList {
 
     String url = "http://localhost:9000";
+    //java -jar students.jar --server.port=9000
 
     public RequestSpecification httpRequest;
     public Response response;
@@ -50,11 +51,10 @@ public class StudentsList {
                     System.out.println(response.getBody().asString()+"DELETED");
                 }
             }
+            httpRequest.body(params.toJSONString());
+            response = httpRequest.post("/student");
+            System.out.println(response.getBody().asString());
         }
-
-        httpRequest.body(params.toJSONString());
-        response = httpRequest.post("/student");
-        System.out.println(response.getBody().asString());
 
         assertEquals(response.getStatusCode(), 201);
     }
@@ -83,11 +83,10 @@ public class StudentsList {
                     System.out.println(response.getBody().asString()+"DELETED");
                 }
             }
+            httpRequest.body(params.toJSONString());
+            response = httpRequest.post("/student");
+            System.out.println(response.getBody().asString());
         }
-
-        httpRequest.body(params.toJSONString());
-        response = httpRequest.post("/student");
-        System.out.println(response.getBody().asString());
 
         assertEquals(response.getStatusCode(), 201);
     }
