@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="RestAPI" />
-        <module name="SeleniumV2" />
         <module name="Appium" />
+        <module name="RestAPI" />
+        <module name="Desktop" />
+        <module name="SeleniumV2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

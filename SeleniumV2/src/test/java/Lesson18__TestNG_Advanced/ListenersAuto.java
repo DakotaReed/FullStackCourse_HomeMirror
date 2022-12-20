@@ -21,11 +21,14 @@ public  class ListenersAuto implements ITestListener {
 
     public void onTestStart(ITestResult test){
         System.out.println("------------------Starting Test: "+test.getName()+"------------------");
+        System.out.println("Tester Name: " + test.getMethod().getConstructorOrMethod().getMethod().getAnnotation(ExecutionData.class).name());
+        System.out.println("Tester Category: " + test.getMethod().getConstructorOrMethod().getMethod().getAnnotation(ExecutionData.class).category());
         System.out.println();
     }
 
     public void onTestSuccess(ITestResult test){
         System.out.println("------------------Test: "+test.getName()+" Passed------------------");
+        System.out.println("Tester Summery: " + test.getMethod().getConstructorOrMethod().getMethod().getAnnotation(ExecutionData.class).company());
         System.out.println();
     }
 

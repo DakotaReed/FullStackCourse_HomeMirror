@@ -12,6 +12,7 @@
         <module>SeleniumV2</module>
         <module>Appium</module>
         <module>RestAPI</module>
+        <module>Desktop</module>
     </modules>
 
     <properties>
