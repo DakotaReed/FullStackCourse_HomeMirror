@@ -10,7 +10,7 @@ import java.io.IOException;
 import static org.testng.Assert.assertEquals;
 
 
-public class Wikipedia {
+public class Wikipedia__EBay {
 
     Document doc;
 
