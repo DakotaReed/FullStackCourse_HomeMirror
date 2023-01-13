@@ -10,6 +10,7 @@
         <module name="RestAPI" />
         <module name="Desktop" />
         <module name="SeleniumV2" />
+        <module name="CIAutomation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

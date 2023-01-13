@@ -13,6 +13,7 @@
         <module>Appium</module>
         <module>RestAPI</module>
         <module>Desktop</module>
+        <module>CIAutomation</module>
     </modules>
 
     <properties>
@@ -31,6 +32,5 @@
         </dependency>
 
     </dependencies>
-
 
 </project>
