@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.fail;
 
+//    java -jar jenkins.war --httpPort=9090
 public class Demo {
 
     @Test
