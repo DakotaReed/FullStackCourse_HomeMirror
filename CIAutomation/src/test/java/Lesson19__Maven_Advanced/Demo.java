@@ -37,5 +37,6 @@ public class Demo {
     //  mvn validate
     //  mvn compile
     //  mvn test -PExecuteTests (pom id)
+    //  mvn test -Dgroups=Integration
 
 }
