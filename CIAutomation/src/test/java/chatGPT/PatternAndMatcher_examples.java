@@ -52,8 +52,8 @@ public class PatternAndMatcher_examples {
     @Test
     public void test03_NonGreedyMatches() {
         String str = "The quick brown fox jumps over the lazy dog";
-//        Pattern pattern = Pattern.compile("\\b.*?\\b");
-        Pattern pattern = Pattern.compile("\\b.q?\\b");
+        Pattern pattern = Pattern.compile("\\b.*?\\b");
+//        Pattern pattern = Pattern.compile("\\b.q?\\b");
         Matcher matcher = pattern.matcher(str);
         while (matcher.find()) {
             System.out.println(matcher.group());
@@ -63,7 +63,8 @@ public class PatternAndMatcher_examples {
     @Test
     public void test04_ValidatingEmailAddresses() {
 //        String email = "example@example.com";
-        String email = "example@example.com";
+        String email = "example@examplecom";
+        String email1 = "example@google.com";
         Pattern pattern = Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
         Matcher matcher = pattern.matcher(email);
         if (matcher.matches()) {
